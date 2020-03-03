@@ -60,7 +60,7 @@ extension StatusBarColorManager {
     }
     
     /// The color of the status bar's background.
-    public static var statusBarBackgroundColor: Color {
+    public static var statusBarBackgroundColor: UIColor {
         get {
             return statusBarBackgroundColorSubject.value
         }
