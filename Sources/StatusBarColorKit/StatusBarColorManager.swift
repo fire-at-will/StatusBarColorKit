@@ -22,7 +22,7 @@ public class StatusBarColorManager: UIHostingController<AnyView> {
             self.setNeedsStatusBarAppearanceUpdate()
         }
         let statusBarBackgroundColorPublisher = StatusBarColorManager.statusBarBackgroundColorSubject.sink { backgroundColor in
-            StatusBarColorUtils.setStatusBarBackgroundColor(on: self.view, color: backgroundColor.uiColor)
+            StatusBarColorUtils.setStatusBarBackgroundColor(on: self.view, color: backgroundColor)
         }
         publishers.insert(statusBarStylePublisher)
         publishers.insert(statusBarBackgroundColorPublisher)
@@ -47,7 +47,7 @@ public class StatusBarColorManager: UIHostingController<AnyView> {
 
 extension StatusBarColorManager {
     private static let statusBarStyleSubject: CurrentValueSubject<UIStatusBarStyle, Never> = CurrentValueSubject(.default)
-    private static let statusBarBackgroundColorSubject: CurrentValueSubject<Color, Never> = CurrentValueSubject(Color.clear)
+    private static let statusBarBackgroundColorSubject: CurrentValueSubject<UIColor, Never> = CurrentValueSubject(UIColor.clear)
     
     /// The current status bar style of the application.
     public static var statusBarStyle: UIStatusBarStyle {
