@@ -26,18 +26,6 @@ public class StatusBarColorManager: UIHostingController<AnyView> {
         }
         publishers.insert(statusBarStylePublisher)
         publishers.insert(statusBarBackgroundColorPublisher)
-        
-//        // Initialize the status bar to have the color.
-//        // We have to set this slightly after initialization since when this function is called, the status bar is not
-//        // yet initialized.
-//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now(), execute: {
-//            StatusBarColorUtils.setStatusBarBackgroundColor(on: self.view, color: backgroundColor.uiColor)
-//        })
-//        
-//        // Run it again in half a second just in case it didn't work the first time.
-//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: {
-//            self.onReceiveNewStatusBarBackgroundColor()
-//        })
     }
     
     @objc required dynamic init?(coder aDecoder: NSCoder) {
