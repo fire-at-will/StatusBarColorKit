@@ -8,6 +8,8 @@
 </p>
 StatusBarColorKit lets you easily set the background color and style of the status bar in SwiftUI! 🌈
 
+![StatusBarKit](assets/screenshot.png)
+
 ## Usage
 
 In your `SceneDelegate.swift` file, replace the existing `UIHostingController` with `StatusBarColorManager` and wrap your `ContentView` in an `AnyView`:
