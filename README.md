@@ -41,3 +41,19 @@ StatusBarColorManager.statusBarStyle = .darkContent
 ```
 
 And that's it!
+
+## Installation
+StatusBarColorKit is a Swift package, to use it in your project, add this to your `Package.swift` file:
+
+```swift
+let package = Package(
+    ...
+    dependencies: [
+        .package(url: "https://github.com/fire-at-will/StatusBarColorKit", from: "0.1.0")
+    ],
+    ...
+)
+```
+
+## Contributions
+PRs are always welcome! :)
