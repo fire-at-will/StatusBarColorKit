@@ -15,7 +15,7 @@ public class StatusBarColorManager: UIHostingController<AnyView> {
         return StatusBarColorManager.statusBarStyleSubject.value
     }
     
-    override init(rootView: AnyView) {
+    public override init(rootView: AnyView) {
         super.init(rootView: rootView)
         
         let statusBarStylePublisher = StatusBarColorManager.statusBarStyleSubject.sink { style in
