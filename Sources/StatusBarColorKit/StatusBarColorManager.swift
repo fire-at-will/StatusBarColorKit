@@ -50,7 +50,7 @@ extension StatusBarColorManager {
     private static let statusBarBackgroundColorSubject: CurrentValueSubject<Color, Never> = CurrentValueSubject(Color.clear)
     
     /// The current status bar style of the application.
-    static var statusBarStyle: UIStatusBarStyle {
+    public static var statusBarStyle: UIStatusBarStyle {
         get {
             return statusBarStyleSubject.value
         }
@@ -60,7 +60,7 @@ extension StatusBarColorManager {
     }
     
     /// The color of the status bar's background.
-    static var statusBarBackgroundColor: Color {
+    public static var statusBarBackgroundColor: Color {
         get {
             return statusBarBackgroundColorSubject.value
         }
