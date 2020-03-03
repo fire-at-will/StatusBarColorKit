@@ -1,5 +1,5 @@
 # StatusBarColorKit
-<p align="center">
+<p align="left">
     <img src="https://img.shields.io/badge/iOS-13.0+-blue.svg" />
     <img src="https://img.shields.io/badge/Swift-5.1-ff69b4.svg" />
     <a href="https://twitter.com/Fire_At_Will_">
