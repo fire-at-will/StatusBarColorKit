@@ -51,12 +51,12 @@ public class StatusBarColorManager: UIHostingController<AnyView> {
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             // Delay setting the color for just a moment to allow the view time to load.
-            StatusBarColorUtils.setStatusBarBackgroundColor(on: self.view, color: backgroundColor)
+            StatusBarColorUtils.setStatusBarBackgroundColor(on: self.view, color: StatusBarColorManager.statusBarBackgroundColorSubject.value)
         }
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             // Delay setting the color for just a moment to allow the view time to load.
-            StatusBarColorUtils.setStatusBarBackgroundColor(on: self.view, color: backgroundColor)
+            StatusBarColorUtils.setStatusBarBackgroundColor(on: self.view, color: StatusBarColorManager.statusBarBackgroundColorSubject.value)
         }
     }
     
