@@ -38,7 +38,7 @@ public class StatusBarColorManager: UIHostingController<AnyView> {
             // Delay setting the color for just a moment to allow the view time to load.
             StatusBarColorUtils.setStatusBarBackgroundColor(on: self.view, color: backgroundColor)
         }
-    })
+    }
 }
     
     @objc required dynamic init?(coder aDecoder: NSCoder) {
