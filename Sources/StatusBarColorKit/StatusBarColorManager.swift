@@ -22,7 +22,10 @@ public class StatusBarColorManager: UIHostingController<AnyView> {
             self.setNeedsStatusBarAppearanceUpdate()
         }
         let statusBarBackgroundColorPublisher = StatusBarColorManager.statusBarBackgroundColorSubject.sink { backgroundColor in
-            StatusBarColorUtils.setStatusBarBackgroundColor(on: self.view, color: backgroundColor)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.001) {
+                // Delay setting the color for just a moment to allow the view time to load.
+                StatusBarColorUtils.setStatusBarBackgroundColor(on: self.view, color: backgroundColor)
+            }
         }
         publishers.insert(statusBarStylePublisher)
         publishers.insert(statusBarBackgroundColorPublisher)
