@@ -31,12 +31,12 @@ public class StatusBarColorManager: UIHostingController<AnyView> {
         publishers.insert(statusBarBackgroundColorPublisher)
     }
 
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+    override public func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
             // Delay setting the color for just a moment to allow the view time to load.
-            StatusBarColorUtils.setStatusBarBackgroundColor(on: self.view, color: backgroundColor)
+            StatusBarColorUtils.setStatusBarBackgroundColor(on: self.view, color: StatusBarColorManager.statusBarBackgroundColorSubject.value)
         }
     }
     
