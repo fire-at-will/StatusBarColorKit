@@ -30,6 +30,18 @@ public class StatusBarColorManager: UIHostingController<AnyView> {
         publishers.insert(statusBarStylePublisher)
         publishers.insert(statusBarBackgroundColorPublisher)
     }
+
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+    super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+    coordinator.animateAlongsideTransition(nil, completion: {
+        _ in
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+            // Delay setting the color for just a moment to allow the view time to load.
+            StatusBarColorUtils.setStatusBarBackgroundColor(on: self.view, color: backgroundColor)
+        }
+    })
+}
     
     @objc required dynamic init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
