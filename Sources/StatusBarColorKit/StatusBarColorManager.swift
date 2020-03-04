@@ -39,7 +39,6 @@ public class StatusBarColorManager: UIHostingController<AnyView> {
             StatusBarColorUtils.setStatusBarBackgroundColor(on: self.view, color: backgroundColor)
         }
     }
-}
     
     @objc required dynamic init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
